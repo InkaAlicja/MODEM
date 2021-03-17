@@ -138,20 +138,20 @@ def decode():
 
         while (True):
             data = isOneOrNot(stream.read(CHUNK))
-            if not data == 'n':     #poczekaj zeby tego kilka bylo
+            if not data == 'n':     
                 count = count + 1
                 if count < 5:
                     continue
 
-            if not data == 'n':     #bylo juz kilka to raczej wiadomosc
+            if not data == 'n':     
                 print('Found message')
                 t = findOffset(stream)
 
                 for i in range(t):
-                    stream.read(int(CHUNK/10))   #przesun sie o znalezione przesuniecie, stracimy jakies dwa wczytane znaki na pewno
+                    stream.read(int(CHUNK/10))   
 
                 while(True):
-                    data = isOneOrNot(stream.read(CHUNK))   #czytamy juz ze znalezionym przesunieciem
+                    data = isOneOrNot(stream.read(CHUNK))   
                     if(data == 'n'):
                         break
                     code = code + data
@@ -202,9 +202,7 @@ def decode():
             else:
                 suma = suma + '0'
 
-        #
-        # odpalenie funkcji division i sprawdzenie czy sie zgadza suma kontrolna
-        #
+        
         src = ""
         for i in range(48):
             if pre4b5b[i]:
