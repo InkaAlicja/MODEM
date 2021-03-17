@@ -159,15 +159,10 @@ def division(poly1,poly2):
     m=len(P2.P)
 
     if(m>n):
-       # print("quotient  :",0)
-       # print("remainder : ", P1)
         return P1
 
 
     A,B=P1.divide(P2)
-   # print(A.P)
-    #print(B.P)
-    #result = cut(B.P)
     result = B.P
     return (result)
 
@@ -214,12 +209,6 @@ def glosnik(bity):
     amplitude = 0.1
     framerate = 44000
 
-    #length = 0.1
-    #freq1  = 440
-    #freq2  = 880
-        #length = 0.05
-        #freq1 = 4400
-        #freq2 = 8800
     length = args.len
     freq1 = args.tone0
     freq2 = args.tone1
