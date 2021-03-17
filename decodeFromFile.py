@@ -138,9 +138,7 @@ def decode(file):
         else: 
             suma = suma + '0'
 
-    #
-    #tu by moglo byc odpalenie funkcji division i sprawdzenie czy sie zgadza suma kontrolna
-    #
+   
     src=""
     for i in range(48):
         if pre4b5b[i]:
@@ -148,9 +146,6 @@ def decode(file):
         else:
             src = src + '0'
     src=bitarray(src)
-   # print(src)
-   
-    #print(int(src.to01(),2))
 
     dst=""
     for i in range(48,96):
@@ -159,9 +154,6 @@ def decode(file):
         else:
             dst = dst + '0'
     dst=bitarray(dst)
-    #print(dst)
-   
-    #print(int(dst.to01(),2))
     
     preSum=""
     for i in range(112,n-32):
@@ -171,8 +163,6 @@ def decode(file):
             preSum = preSum + '0'
 
     preSum = bitarray(preSum)
-
-   # print(preSum)
 
     preSum=preSum.tobytes().decode('utf8')
 
